@@ -13,6 +13,7 @@ ROLE_STORAGE_PATH = SHELL_GPT_CONFIG_FOLDER / "roles"
 FUNCTIONS_PATH = SHELL_GPT_CONFIG_FOLDER / "functions"
 CHAT_CACHE_PATH = Path(gettempdir()) / "chat_cache"
 CACHE_PATH = Path(gettempdir()) / "cache"
+DEEPSEEK_API_URL = "https://api.deepseek.com/"
 
 # TODO: Refactor ENV variables with SGPT_ prefix.
 DEFAULT_CONFIG = {
@@ -31,7 +32,7 @@ DEFAULT_CONFIG = {
     "OPENAI_FUNCTIONS_PATH": os.getenv("OPENAI_FUNCTIONS_PATH", str(FUNCTIONS_PATH)),
     "OPENAI_USE_FUNCTIONS": os.getenv("OPENAI_USE_FUNCTIONS", "true"),
     "SHOW_FUNCTIONS_OUTPUT": os.getenv("SHOW_FUNCTIONS_OUTPUT", "false"),
-    "API_BASE_URL": os.getenv("API_BASE_URL", "default"),
+    "API_BASE_URL": os.getenv("API_BASE_URL", DEEPSEEK_API_URL),
     "PRETTIFY_MARKDOWN": os.getenv("PRETTIFY_MARKDOWN", "true"),
     "USE_LITELLM": os.getenv("USE_LITELLM", "false"),
     "SHELL_INTERACTION": os.getenv("SHELL_INTERACTION ", "true"),
